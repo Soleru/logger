@@ -5,10 +5,10 @@ export class LogFile implements ILoggerFunction {
     private fileName;
 
     constructor(fileName: string = Date.now().toString()) {
-        if (!existsSync("log")) {
-            mkdirSync("log");
+        if (!existsSync("logs")) {
+            mkdirSync("logs");
         }
-        this.fileName = "log/" + fileName + ".log";
+        this.fileName = "logs/" + fileName + ".log";
     }
 
     info(message: string): void {
